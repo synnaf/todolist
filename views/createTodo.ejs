@@ -13,15 +13,14 @@
     <main>
         <section class="todo-heading">
             <h1>What do you want to do?</h1>
-        </section>
-            
+        </section>  
         <section class="todo-form">
             <form action="/createTodo" method="post">
                 <div class="form-field">
                     <input type="text" name="todo_author" placeholder="Name" value="">
                  </div>
                  <div class="form-field">
-                        <input type="textarea" name="todo_content" placeholder="Todo" value="">
+                    <input type="textarea" name="todo_content" placeholder="Todo" value="">
                 </div>
                 <div class="form-field">
                     <input type="date" name="todo_deadline" placeholder="Deadline" value="">
@@ -29,33 +28,25 @@
                 <button type="submit">Create todo</button>
             </form>
         </section>
-    </main>
-        
+    </main>  
     <section class="todo-list">
         <div class="current">
             <div class="testy">
-            <h2>Current</h2>
-
+            <h2>My Todo's</h2>
         </div>
-            <!-- items list from db -->
-            <!-- Placeholder -->
-        
             <ul>
                 <% findnewItem.forEach( (item)=> { %>
                     <li> 
                         <div>
-                                 <%= item.author %>: 
-                                 <%= item.text %>, 
-                                 <%= item.deadline %>
+                            <%= item.author %>: 
+                            <%= item.text %>, 
+                            <%= item.deadline %>
                         </div>
-                    
                         <a href="/createTodo/edit/<%=item._id%>">Edit</a>
                         <a href="/createTodo/delete/<%=item._id%>">Delete</a>
                     </li>
-
                 <% }); %> 
             </ul>
-
             <div class="sort">
                 <a href="/createTodo/?sort=1">Sort A-Z</a>
                 <a href="/createTodo/?sort=-1">Sort by date</a>
