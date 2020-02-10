@@ -29,10 +29,12 @@
                             <input type="text" name="text" value="<%=editItem.text%>">
                         </div> 
                         <div class="form-field">
-                            <p>Old date</p>
-                            <input type="text" name="test" value="<%=editItem.deadline%>" disabled>
-                            <p> New date</p>
-                            <input type="date" name="deadline" value="New date">
+                            <div class="old-date"> <h3>Old date</h3>
+                                <input type="text" name="test" value="<%=editItem.deadline%>" disabled>
+                            </div>
+                            <div class="new-date"> <h3>New date</h3>
+                                <input type="date" name="deadline" value="New date">
+                            </div>
                         </div>
                         <input type="text" name="_id" value="<%=editItem.id%>" hidden> 
                         

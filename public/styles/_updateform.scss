@@ -8,6 +8,12 @@
         font-size:16pt;
         border-bottom:3px solid $pink-color;
         margin-bottom:20px;
+        font-family: sans-serif;
+
+        .old-date input {
+            width:100%;
+            border-bottom:3px solid grey;
+        }
 
         input {
             width:100%;

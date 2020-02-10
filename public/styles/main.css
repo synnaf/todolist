@@ -16,6 +16,11 @@
   font-size: 16pt;
   border-bottom: 3px solid #feced5;
   margin-bottom: 20px;
+  font-family: sans-serif;
+}
+.todo-form-edit .form-field .old-date input {
+  width: 100%;
+  border-bottom: 3px solid grey;
 }
 .todo-form-edit .form-field input {
   width: 100%;
