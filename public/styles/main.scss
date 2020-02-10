@@ -1,0 +1,123 @@
+$pink-color:rgb(254, 206, 213); 
+$blue-color: rgb(2, 2, 205);
+@import "edit-header" ; 
+@import "updateform"; 
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height:50vh; 
+
+    .todo-heading {
+        text-align: center;
+        font-size:3.5rem;
+        width:50%;
+        background: $blue-color;
+        color: $pink-color;
+    }
+    .todo-form {
+        width:50%;
+        background:$pink-color; 
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    
+        .form-field {
+            font-size:16pt;
+            border-bottom:3px solid white;
+            margin-bottom:20px;
+
+            input {
+                width:100%;
+                font-size:16pt;
+                background-color:$pink-color;
+                border:none;
+            }
+        }
+    
+        button {
+            margin-top:20pt;
+            border:3px solid white;
+            border-radius:20px 1px;
+            padding:8px;
+           
+            font-size:20pt;
+            background-color:$pink-color;
+        }
+    
+    }
+
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .current {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align:center;
+        width:100%;
+        background: lightyellow;
+
+        h2 {
+            border-bottom:3px solid $blue-color;
+            font-size:30pt;
+            width:100%; 
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size:16pt; 
+            padding:0;
+            list-style-type: none;
+            font-family:sans-serif;
+
+            li:before {
+                content: '✔';
+                color:$pink-color;
+                margin-right:10px;   
+            }
+
+            li {
+                display: flex;
+                margin:5px;
+                padding:5px;
+                width:100%;
+                a {
+                   margin-left:10px;
+                }
+            }
+        }
+
+        .pages, .sort {
+            font-size:14pt;
+            font-weight:bold;
+            margin:10px;
+            font-family:sans-serif; 
+            color:grey;
+            a {
+                margin:10px;
+            }
+            a:link {
+                text-decoration:none;
+            }
+            a:visited {
+                color:grey;
+            }
+            a:hover{
+                color:$pink-color;
+            }
+
+        }
+        
+    }
+
+}

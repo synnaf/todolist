@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List!</title>
+    <!-- CSS -->
+    <link rel='stylesheet' type='text/css' href='/styles/main.css' />
+</head>
+<body>
+    <main>
+        <section class="todo-heading-edit">
+            <h1>What do you want to do?</h1>
+        </section>
+    </main>
+        
+    <section class="todo-list">
+        <div class="current">
+            <div class="testy">
+                <h2>Edit item</h2>
+            </div>
+<section class="todo-form-edit">
+                    <form method="post" action="/createTodo/edit/:id">
+                        <div class="form-field"> 
+                            <input type="text" name="author" id="" value="<%=editItem.author%>">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="text" value="<%=editItem.text%>">
+                        </div> 
+                        <div class="form-field">
+                            <p>Old date</p>
+                            <input type="text" name="test" value="<%=editItem.deadline%>" disabled>
+                            <p> New date</p>
+                            <input type="date" name="deadline" value="New date">
+                        </div>
+                        <input type="text" name="_id" value="<%=editItem.id%>" hidden> 
+                        
+                        <button type="submit">Update</button>
+                    </form>
+            </section> 
+            <div class="pages">
+                <a href="/createTodo/?page=1">Back</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

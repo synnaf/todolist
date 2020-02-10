@@ -1,0 +1,143 @@
+@charset "UTF-8";
+.todo-heading-edit {
+  text-align: center;
+  font-size: 50pt;
+  width: 100%;
+  background: #0202cd;
+  color: #feced5;
+}
+
+.todo-form-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.todo-form-edit .form-field {
+  font-size: 16pt;
+  border-bottom: 3px solid #feced5;
+  margin-bottom: 20px;
+}
+.todo-form-edit .form-field input {
+  width: 100%;
+  font-size: 16pt;
+  border: none;
+  background-color: lightyellow;
+}
+
+button {
+  margin-top: 20pt;
+  border: 3px solid #feced5;
+  border-radius: 20px 1px;
+  padding: 8px;
+  font-size: 20pt;
+  background-color: lightyellow;
+}
+
+.pages {
+  padding-top: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50vh;
+}
+main .todo-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  width: 50%;
+  background: #0202cd;
+  color: #feced5;
+}
+main .todo-form {
+  width: 50%;
+  background: #feced5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main .todo-form .form-field {
+  font-size: 16pt;
+  border-bottom: 3px solid white;
+  margin-bottom: 20px;
+}
+main .todo-form .form-field input {
+  width: 100%;
+  font-size: 16pt;
+  background-color: #feced5;
+  border: none;
+}
+main .todo-form button {
+  margin-top: 20pt;
+  border: 3px solid white;
+  border-radius: 20px 1px;
+  padding: 8px;
+  font-size: 20pt;
+  background-color: #feced5;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.todo-list .current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background: lightyellow;
+}
+.todo-list .current h2 {
+  border-bottom: 3px solid #0202cd;
+  font-size: 30pt;
+  width: 100%;
+}
+.todo-list .current ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16pt;
+  padding: 0;
+  list-style-type: none;
+  font-family: sans-serif;
+}
+.todo-list .current ul li:before {
+  content: "✔";
+  color: #feced5;
+  margin-right: 10px;
+}
+.todo-list .current ul li {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+}
+.todo-list .current ul li a {
+  margin-left: 10px;
+}
+.todo-list .current .pages, .todo-list .current .sort {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 10px;
+  font-family: sans-serif;
+  color: grey;
+}
+.todo-list .current .pages a, .todo-list .current .sort a {
+  margin: 10px;
+}
+.todo-list .current .pages a:link, .todo-list .current .sort a:link {
+  text-decoration: none;
+}
+.todo-list .current .pages a:visited, .todo-list .current .sort a:visited {
+  color: grey;
+}
+.todo-list .current .pages a:hover, .todo-list .current .sort a:hover {
+  color: #feced5;
+}
+
+/*# sourceMappingURL=main.css.map */

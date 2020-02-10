@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List!</title>
+    <!-- CSS -->
+    <link rel='stylesheet' type='text/css' href='/styles/main.css' />
+    
+</head>
+<body>
+    <main>
+        <section class="todo-heading">
+            <h1>What do you want to do?</h1>
+        </section>
+            
+        <section class="todo-form">
+            <form action="/createTodo" method="post">
+                <div class="form-field">
+                    <input type="text" name="todo_author" placeholder="Name" value="">
+                 </div>
+                 <div class="form-field">
+                        <input type="textarea" name="todo_content" placeholder="Todo" value="">
+                </div>
+                <div class="form-field">
+                    <input type="date" name="todo_deadline" placeholder="Deadline" value="">
+                </div>
+                <button type="submit">Create todo</button>
+            </form>
+        </section>
+    </main>
+        
+    <section class="todo-list">
+        <div class="current">
+            <div class="testy">
+            <h2>Current</h2>
+
+        </div>
+            <!-- items list from db -->
+            <!-- Placeholder -->
+        
+            <ul>
+                <% findnewItem.forEach( (item)=> { %>
+                    <li> 
+                        <div>
+                                 <%= item.author %>: 
+                                 <%= item.text %>, 
+                                 <%= item.deadline %>
+                        </div>
+                    
+                        <a href="/createTodo/edit/<%=item._id%>">Edit</a>
+                        <a href="/createTodo/delete/<%=item._id%>">Delete</a>
+                    </li>
+
+                <% }); %> 
+            </ul>
+
+            <div class="sort">
+                <a href="/createTodo/?sort=1">Sort A-Z</a>
+                <a href="/createTodo/?sort=-1">Sort by date</a>
+            </div>
+            <div class="pages">
+                <a href="/createTodo/?page=1"> << </a>
+                <a href="/createTodo/?page=2">>></ahref>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
