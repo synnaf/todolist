@@ -12,10 +12,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-
 //middleware to handel requests
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.json());
+app.use(express.json()); //eventuellt ta bort denna rad? 
 app.use(express.urlencoded({ extended: true })); 
 
 

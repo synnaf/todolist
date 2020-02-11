@@ -35,7 +35,7 @@
             <h2>My Todo's</h2>
         </div>
             <ul>
-                <% findnewItem.forEach( (item)=> { %>
+                <% findnewItems.forEach( (item)=> { %>
                     <li> 
                         <div>
                             <%= item.author %>: 
@@ -52,8 +52,15 @@
                 <a href="/createTodo/?sort=-1">Sort by date</a>
             </div>
             <div class="pages">
-                <a href="/createTodo/?page=1"> << </a>
-                <a href="/createTodo/?page=2">>></ahref>
+
+            <!-- Denna loop kanske kan användas? om vi kan säga att för vart tredje element, gör en ny sida -->
+            <%  for(let page=1; page < numberOfPages; page++) { %> 
+               <% if(currentpage == page){ %> 
+                    <a href="/createTodo/?page=<%=page%>" class="active"><%=page%></a>
+               <% } else { %>
+                    <a href="/createTodo/?page=<%=page%>"><%=page%></a>
+               <% }  %>  
+            <% } %> 
             </div>
         </div>
     </section>

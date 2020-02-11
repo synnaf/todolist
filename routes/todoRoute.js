@@ -2,18 +2,22 @@ const express = require("express");
 const TodoItem = require("../model/todoSchema"); 
 const router = express.Router(); 
 
-const itemsperpage = 3; 
+
 router.route("/createTodo") 
     .get(async (req,res) => {
-        const page = req.query.page; 
+        const currentpage = req.query.page || 1;
+        const itemsperpage = 3;  
         const a_z = req.query.sort; 
-        const bydate = req.query.sort; 
-        const findnewItem = await TodoItem
-            .find()
-            .skip((page-page)*itemsperpage)
-            .limit(itemsperpage)
+        const bydate = req.query.sort;
+
+        const allItems = await TodoItem.find()
+        const findnewItems = await TodoItem.find().skip((currentpage - 1) * itemsperpage).limit(itemsperpage)
             .sort({author: a_z, date: bydate});
-        res.render("createTodo", {findnewItem}); 
+        
+        const numberOfPages = Math.ceil(allItems.length / items) 
+        res.render("createTodo", {findnewItems, numberOfPages, currentpage}); 
+    
+
     })
      .post(async (req, res) => {
         await new TodoItem({ text: req.body.todo_content, author: req.body.todo_author, deadline: req.body.todo_deadline}).save();
@@ -23,7 +27,7 @@ router.route("/createTodo")
 
 router.get("/createTodo/delete/:id", async (req, res)=> {
     await TodoItem.deleteOne({_id:req.params.id}); 
-    res.redirect("/createTodo"); 
+    res.redirect("/createTodo");  
 }); 
 
 

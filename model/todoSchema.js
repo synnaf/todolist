@@ -2,9 +2,9 @@
 const mongoose = require("mongoose"); 
 
 const schemaTodoItem = new mongoose.Schema( {
-    text: String, 
+    text: {type: String, required: true },  
     author: String, 
-    deadline: { type: Date }
+    deadline: { type: Date, default: Date.now() }
 }); 
 
 const TodoItem = mongoose.model("createtodo", schemaTodoItem); 
