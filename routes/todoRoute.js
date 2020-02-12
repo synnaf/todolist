@@ -14,9 +14,8 @@ router.route("/createTodo")
         const findnewItems = await TodoItem.find().skip((currentpage - 1) * itemsperpage).limit(itemsperpage)
             .sort({author: a_z, date: bydate});
         
-        const numberOfPages = Math.ceil(allItems.length / items) 
+        const numberOfPages = Math.ceil(allItems.length / itemsperpage) 
         res.render("createTodo", {findnewItems, numberOfPages, currentpage}); 
-    
 
     })
      .post(async (req, res) => {
