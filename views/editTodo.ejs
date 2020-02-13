@@ -16,29 +16,28 @@
     </main>  
     <section class="todo-list">
         <div class="current">
-            <div class="testy">
+            <div>
                 <h2>Edit item</h2>
             </div>
-<section class="todo-form-edit">
-                    <form method="post" action="/createTodo/edit/:id">
-                        <div class="form-field"> 
-                            <input type="text" name="author" id="" value="<%=editItem.author%>">
+            <section class="todo-form-edit">
+                <form method="post" action="/createTodo/edit/:id">
+                    <div class="form-field"> 
+                        <input type="text" name="author" id="" value="<%=editItem.author%>">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="text" value="<%=editItem.text%>">
+                    </div> 
+                    <div class="form-field">
+                        <div class="old-date"> <h3>Old deadline</h3>
+                            <input type="text" name="test" value="<%=editItem.deadline.toDateString()%>" disabled>
                         </div>
-                        <div class="form-field">
-                            <input type="text" name="text" value="<%=editItem.text%>">
-                        </div> 
-                        <div class="form-field">
-                            <div class="old-date"> <h3>Old deadline</h3>
-                                <input type="text" name="test" value="<%=editItem.deadline.toDateString()%>" disabled>
-                            </div>
-                            <div class="new-date"> <h3>New deadline</h3>
-                                <input type="date" name="deadline" value="New date">
-                            </div>
+                        <div class="new-date"> <h3>New deadline</h3>
+                            <input type="date" name="deadline" value="New date">
                         </div>
-                        <input type="text" name="_id" value="<%=editItem.id%>" hidden> 
-                        
-                        <button type="submit">Update</button>
-                    </form>
+                    </div>
+                    <input type="text" name="_id" value="<%=editItem.id%>" hidden> 
+                    <button type="submit">Update</button>
+                </form>
             </section> 
             <div class="pages">
                 <a href="/createTodo/?page=1">Back</a>
