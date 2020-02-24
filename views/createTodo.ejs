@@ -39,7 +39,7 @@
                         <div>
                             <%= item.author %>: 
                             <%= item.text %>, 
-                            <%= item.deadline.toDateString() %>
+                             <%= item.deadline %>
                         </div>
                         <a href="/createTodo/edit/<%=item._id%>">Edit</a>
                         <a href="/createTodo/delete/<%=item._id%>">Delete</a>
@@ -60,6 +60,7 @@
             <% } %> 
             </div>
         </div>
+        <a href="/createTodo/about">About</a>
     </section>
 </body>
 </html>

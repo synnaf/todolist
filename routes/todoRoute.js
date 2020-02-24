@@ -40,5 +40,9 @@ router.route("/createTodo/edit/:id")
         res.redirect("/createTodo"); 
     }) 
 
+router.get("/createTodo/about", (req, res) => {
+    res.send("This todo app was created by Fanny 8-)")
+})
+
 
 module.exports = router; 

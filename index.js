@@ -24,3 +24,7 @@ mongoose.connect(configDb.databaseUrl, {
     app.listen(port); 
     console.log(`Listening on port ${port}`); 
 }); 
+
+
+//exporterar app till testing 
+module.exports = app
