@@ -1,7 +1,6 @@
 //skapa kopplingen till server 
 const express = require("express"); 
 const mongoose = require("mongoose"); 
-
 const configDb = require("./config/config");
 const todoRoute = require("./routes/todoRoute");  
 const path = require("path")
