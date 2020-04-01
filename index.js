@@ -14,15 +14,18 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs"); 
 app.use(todoRoute); 
 
-const port = process.env.PORT; 
+const PORT = process.env.PORT; 
 
-mongoose.connect(config.databaseUrl, {
-    useUnifiedTopology: true, 
-    useNewUrlParser: true
-}).then(() => {
-    app.listen(port); 
-    console.log(`Listening on port ${port}`); 
-}); 
+const dbOptions = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+}
+
+mongoose.connect(config.databaseUrl, dbOptions).then(() => {
+    app.listen(PORT, () => console.log(`App listening on port ${PORT}!`))
+})
+
 
 
 //exporterar app till testing 
