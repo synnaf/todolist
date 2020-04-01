@@ -22,6 +22,7 @@ const dbOptions = {
     useCreateIndex: true
 }
 
+
 mongoose.connect(config.databaseUrl, dbOptions).then(() => {
     app.listen(PORT, () => console.log(`App listening on port ${PORT}!`))
 })
