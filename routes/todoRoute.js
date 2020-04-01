@@ -20,17 +20,17 @@ router.route("/")
     })
      .post(async (req, res) => {
         await new TodoItem({ text: req.body.todo_content, author: req.body.todo_author, deadline: req.body.todo_deadline}).save();
-        res.redirect("/createTodo"); 
+        res.redirect("/"); 
     }) 
 
 
-router.get("/createTodo/delete/:id", async (req, res)=> {
+router.get("/delete/:id", async (req, res)=> {
     await TodoItem.deleteOne({_id:req.params.id}); 
     res.redirect("/");  
 }); 
 
 
-router.route("/createTodo/edit/:id")
+router.route("/edit/:id")
     .get(async (req, res)=> {
         const editItem = await TodoItem.findById({_id:req.params.id})  
         res.render("editTodo.ejs", {editItem}); 
