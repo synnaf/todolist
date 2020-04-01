@@ -16,7 +16,7 @@ app.use(todoRoute);
 
 const port = process.env.PORT; 
 
-mongoose.connect(configDb.databaseUrl, {
+mongoose.connect(config.databaseUrl, {
     useUnifiedTopology: true, 
     useNewUrlParser: true
 }).then(() => {
