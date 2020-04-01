@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs"); 
 app.use(todoRoute); 
 
-const port = process.env.PORT || 5005;
+const port = process.env.PORT; 
 
 mongoose.connect(configDb.databaseUrl, {
     useUnifiedTopology: true, 
