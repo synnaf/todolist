@@ -17,7 +17,7 @@ app.use(todoRoute);
 const PORT = process.env.PORT; 
 
 const dbOptions = {
-    useUnifiedTopology: false,
+    useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true
 }
