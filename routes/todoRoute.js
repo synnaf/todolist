@@ -3,7 +3,7 @@ const TodoItem = require("../model/todoSchema");
 const router = express.Router(); 
 
 
-router.route("/createTodo") 
+router.route("/") 
     .get(async (req,res) => {
         const currentpage = req.query.page || 1;
         const itemsperpage = 3;  
@@ -15,7 +15,7 @@ router.route("/createTodo")
             .sort({author: a_z, date: bydate});
         
         const numberOfPages = Math.ceil(allItems.length / itemsperpage) 
-        res.render("createTodo", {findnewItems, numberOfPages, currentpage}); 
+        res.render("createTodo.ejs", {findnewItems, numberOfPages, currentpage}); 
 
     })
      .post(async (req, res) => {
@@ -26,21 +26,21 @@ router.route("/createTodo")
 
 router.get("/createTodo/delete/:id", async (req, res)=> {
     await TodoItem.deleteOne({_id:req.params.id}); 
-    res.redirect("/createTodo");  
+    res.redirect("/");  
 }); 
 
 
 router.route("/createTodo/edit/:id")
     .get(async (req, res)=> {
         const editItem = await TodoItem.findById({_id:req.params.id})  
-        res.render("editTodo", {editItem}); 
+        res.render("editTodo.ejs", {editItem}); 
     })
     .post(async (req, res)=> {
         await TodoItem.updateOne({_id:req.body._id}, [{$set: {text: req.body.text}}, {$set: {author: req.body.author}}, {$set: {deadline: req.body.deadline}}] );       
-        res.redirect("/createTodo"); 
+        res.redirect("/"); 
     }) 
 
-router.get("/createTodo/about", (req, res) => {
+router.get("/about", (req, res) => {
     res.send("This todo app was created by Fanny 8-)")
 })
 
