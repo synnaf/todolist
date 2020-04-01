@@ -41,26 +41,26 @@
                             <%= item.text %>, 
                              <%= item.deadline %>
                         </div>
-                        <a href="/createTodo/edit/<%=item._id%>">Edit</a>
-                        <a href="/createTodo/delete/<%=item._id%>">Delete</a>
+                        <a href="/edit/<%=item._id%>">Edit</a>
+                        <a href="/delete/<%=item._id%>">Delete</a>
                     </li>
                 <% }); %> 
             </ul>
             <div class="sort">
-                <a href="/createTodo/?sort=1">Sort by A-Z</a>
-                <a href="/createTodo/?sort=-1">Sort by closest date</a>
+                <a href="/?sort=1">Sort by A-Z</a>
+                <a href="/?sort=-1">Sort by closest date</a>
             </div>
             <div class="pages">
             <% for(let page=1; page <= numberOfPages; page++) { %> 
                <% if(currentpage == page){ %> 
-                    <a href="/createTodo/?page=<%=page%>" class="active"><%=page%></a>
+                    <a href="/?page=<%=page%>" class="active"><%=page%></a>
                <% } else { %>
-                    <a href="/createTodo/?page=<%=page%>"><%=page%></a>
+                    <a href="/?page=<%=page%>"><%=page%></a>
                <% }  %>  
             <% } %> 
             </div>
         </div>
-        <a href="/createTodo/about">About</a>
+        <a href="/about">About</a>
     </section>
 </body>
 </html>
